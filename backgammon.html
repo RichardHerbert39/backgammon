@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Backgammon</title>
+		<link rel="stylesheet" href="style/style.css">
+	</head>
+	
+	<body>
+		<section class="game">
+			<section class="board">
+				<section class="quarter top right" id="first">
+					<div class="space" id="1"></div>
+					<div class="space" id="2"></div>
+					<div class="space" id="3"></div>
+					<div class="space" id="4"></div>
+					<div class="space" id="5"></div>
+					<div class="space" id="6"></div>
+				</section>
+				<section class="quarter top left" id="second">
+					<div class="space" id="7"></div>
+					<div class="space" id="8"></div>
+					<div class="space" id="9"></div>
+					<div class="space" id="10"></div>
+					<div class="space" id="11"></div>
+					<div class="space" id="12"></div>
+				</section>
+				<section class="quarter bottom left" id="third">
+					<div class="space" id="13"></div>
+					<div class="space" id="14"></div>
+					<div class="space" id="15"></div>
+					<div class="space" id="16"></div>
+					<div class="space" id="17"></div>
+					<div class="space" id="18"></div>
+				</section>
+				<section class="quarter bottom right" id="fourth">
+					<div class="space" id="19"></div>
+					<div class="space" id="20"></div>
+					<div class="space" id="21"></div>
+					<div class="space" id="22"></div>
+					<div class="space" id="23"></div>
+					<div class="space" id="24"></div>
+				</section>
+			</section>
+			<section class="middle" id="middle"></section>
+			<section class="sidebar">
+				<section class="finish black" id="0"></section>
+				<section class="finish white" id="25"></section>
+			</section>
+		</section>
+		<section class="dice">
+			<button class="diceButton" id="diceButtonStart">Roll Dice</button>
+			<button class="diceButton" id="diceButton">Roll Dice</button>
+			<button class="diceButton" id="chooseAgain">Choose Again</button>
+			<button class="diceButton" id="reset">Reset</button>
+			<div class="die" id="die1"></div>
+			<div class="die" id="die2"></div>
+			<div class="die" id="die3"></div>
+			<div class="die" id="die4"></div>
+		</section>
+		<button id="rulesButton">Rules</button>
+		<aside class="rules" id="rules">
+			<div id="hideRules"></div>
+			<h1>Backgammon</h1>
+			<h2>How To Play</h2>
+			<ol>
+				<li>Move your pieces in the direction shown.</li>
+				<li>The winner is the first to move all of their pieces to their home trough.</li>
+				<li>You may only move pieces to the home trough if they are all in the home quarter (the one closest to the home trough).</li>
+				<li>Move pieces by selecting a valid piece, then a valid die (if a piece or die is valid, it will be highlighted).</li>
+				<li>You may not move to a space occupied by 2 or more of your opponent's pieces.</li>
+				<li>Moving to a space occupied by 1 enemy piece will result in it being captured.</li>
+				<li>Captured pieces must be brought back before you can make further moves.</li>
+				<li>Captured pieces are brought back in the opposing home quarter.</li>
+				<li>Rolling a double allows each die to be used twice. This is represented by 4 dice.</li>
+			</ol>
+		</aside>
+		
+		<script src="script/script.js"></script>
+	</body>
+</html>

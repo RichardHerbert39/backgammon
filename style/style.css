@@ -1,0 +1,608 @@
+* {
+	box-sizing: border-box;
+}
+
+.game, .board, .quarter, .sidebar {
+	display: flex;
+}
+
+.game {
+	background-color: #62371e;
+	border: 2px solid #3b2112;
+	padding: 10px;
+	justify-content: space-around;
+	width: 400px;
+}
+
+.game, .dice{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.middle {
+	position: absolute;
+	background-color: #3b2112;
+	height: 224px;
+	width: 4px;
+	top: 8px;
+	left: auto;
+	right: auto;
+	margin-left: -15px;
+	z-index: 1;
+}
+
+.middle div {
+	position: relative;
+	width: 20px;
+	left: -8px;
+	height: 5px;
+}
+
+.middle .blk {
+	top: 48px;
+}
+
+.middle .wht {
+	top: 125px;
+}
+
+.board {
+	flex-wrap: wrap;
+	width: 90%;
+	justify-content: space-between;
+	position: relative;
+}
+
+.quarter {
+	width: 47.5%;
+	background-color: #006400;
+	justify-content: space-around;
+}
+
+.quarter::before {
+	content: "";
+	position: absolute;
+	background-color: #cf8a0a;
+	height: 12%;
+	width: 1.05%;
+	z-index: 2;
+}
+
+.top::before {
+	top: 5%;
+}
+
+.bottom::before {
+	bottom: 5%;
+}
+
+.left::before {
+	left: 48.5%;
+	border-right: 2px dashed #aa7208;
+}
+
+.right::before {
+	right: 48.5%;
+	border-left: 2px dashed #aa7208;
+}
+
+.top {
+	flex-direction: row-reverse;
+}
+
+#second {
+	order: -1;
+}
+
+.sidebar {
+	width: 6%;
+	border: 2px solid #3b2112;
+	flex-direction: column;
+}
+
+.finish {
+	width: 90%;
+	height: 80px;
+	margin-left: 4%;
+	border: 2px solid #3b2112;
+	background: linear-gradient(90deg, #754224 0%, #62371e 25%, #62371e 50%, #4e2c18 100%);
+}
+
+#dirblack {
+	color: #000000;
+}
+
+#dirwhite {
+	color: #ffffff;
+}
+
+.finish span {
+	position: absolute;
+	font-size: 2rem;
+	transform: rotate(-90deg);
+	margin-left: -2px;
+	margin-top: 17px;
+}
+
+.finish div {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	z-index: 20;
+}
+
+.black {
+	margin-top: 10px;
+}
+
+.white {
+	margin-top: 20px;
+}
+
+.space {
+	width: 16%;
+	height: 100px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom .space {
+	justify-content: flex-end
+}
+
+.space::before {
+	content: "";
+	left: 50%;
+	margin-left: -10px;
+	position: absolute;
+	border-width: 75px 10px;
+	border-style: solid;
+}
+
+.top .space:nth-child(2n)::before {
+	border-color: #111111 transparent transparent transparent;
+}
+
+.top .space:nth-child(2n-1)::before {
+	border-color: #eeeeee transparent transparent transparent;
+}
+
+.bottom .space::before {
+	bottom: 0px;
+}
+
+.bottom .space:nth-child(2n-1)::before {
+	border-color: transparent transparent #eeeeee transparent;
+}
+
+.bottom .space:nth-child(2n)::before {
+	border-color: transparent transparent #111111 transparent;
+}
+
+.space div {
+	position: relative;
+	width: 80%;
+	height: 5px;
+	margin-left: 10%;
+	z-index: 20;
+}
+
+.blk, .wht {
+	border: 1px solid #777777;
+}
+
+.blk {
+	background: linear-gradient(90deg, #555555 0%, #333333 25%, #333333 50%, #151515 100%);
+}
+
+.wht {
+	background: linear-gradient(90deg, #ffffff 0%, #dddddd 25%, #dddddd 50%, #aaaaaa 100%);
+}
+
+.dice {
+	display: flex;
+	margin-top: 5px;
+	width: 400px;
+	justify-content: space-around;
+}
+
+.diceButton, #rulesButton {
+	margin-top: 5px;
+	height: 40px;
+	width: 100px;
+	background-color: #aa2323;
+	border: 2px solid #771111;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	color: #dddddd;
+}
+
+#diceButton, #chooseAgain, #reset {
+	display: none;
+}
+
+#chooseAgain {
+	font-size: 1rem;
+}
+
+#die1, #die3 {
+	order: -1;
+}
+
+#die3, #die4 {
+	display: none;
+}
+
+.die {
+	width: 60px;
+	height: 60px;
+	background-color: #aa2323;
+	border: 5px solid #771111;
+	border-radius: 10px;
+	font-size: 2.5rem;
+	text-align: center;
+	color: #dddddd;
+	align-self: flex-end
+}
+
+#rulesButton {
+	position: relative;
+	margin-left: 50%;
+	left: -50px;
+}
+
+.rules {
+	position: absolute;
+	display: none;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	color: #ffffff;
+	background-color: #000000;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.7rem;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+li {
+	font-size: 1.1rem;
+	margin-bottom: 5px;
+}
+
+ol {
+	list-style: none;
+}
+
+#hideRules {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	top: 10px;
+	right: 10px;
+}
+
+#hideRules::before {
+	content: "";
+	position: absolute;
+	height: 54px;
+	width: 10px;
+	top: -7px;
+	left: 15px;
+	border-radius: 5px;
+	transform: rotate(45deg);
+	background-color: #bbbbbb;
+}
+
+#hideRules::after {
+	content: "";
+	position: absolute;
+	height: 54px;
+	width: 10px;
+	top: -7px;
+	left: 15px;
+	border-radius: 5px;
+	transform: rotate(135deg);
+	background-color: #bbbbbb;
+}
+
+@keyframes showRules{
+	from {opacity: 0;}
+	to {opacity: 0.7;}
+}
+
+@keyframes hideRules{
+	from {opacity: 0.7;}
+	to {opacity: 0;}
+}
+
+@media (min-width: 620px) {
+	.game, .dice {
+		width: 600px;
+	}
+	
+	.middle {
+		height: 224px;
+		width: 5px;
+		margin-left: -23px;
+	}
+	
+	.middle div {
+		width: 26px;
+		left: -10px;
+		height: 6px;
+	}
+
+	.middle .blk {
+		top: 67px;
+	}
+
+	.middle .wht {
+		top: 197px;
+	}
+	
+	.space {
+		height: 125px;
+	}
+	
+	.space div {
+		height: 7px;
+	}
+	
+	.space::before {
+		margin-left: -15px;
+		border-width: 112px 15px;
+	}
+	
+	.finish {
+		height: 100px;
+	}
+	
+	.finish span {
+		margin-left: 2px;
+		margin-top: 30px;
+	}
+	
+	.finish div {
+		height: 6px;
+	}
+	
+	.black {
+		margin-top: 15px;
+	}
+	
+	.white {
+		margin-top: 30px;
+	}
+	
+	.left::before {
+		border-right-width: 3px;
+	}
+	
+	.right::before {
+		border-left-width: 3px;
+	}
+}
+
+@media (min-width: 820px) {
+	.game, .dice {
+		width: 800px;
+	}
+	
+	.middle {
+		height: 324px;
+		width: 7px;
+		margin-left: -31px;
+	}
+	
+	.middle div {
+		width: 30px;
+		left: -11px;
+		height: 7px;
+	}
+
+	.middle .blk {
+		top: 84px;
+	}
+
+	.middle .wht {
+		top: 270px;
+	}
+	
+	.space {
+		height: 150px;
+	}
+	
+	.space div {
+		height: 9px;
+	}
+	
+	.space::before {
+		margin-left: -20px;
+		border-width: 150px 20px;
+	}
+	
+	.finish {
+		height: 110px;
+	}
+	
+	.finish span {
+		margin-left: 10px;
+		margin-top: 30px;
+	}
+	
+	.finish div {
+		height: 7px;
+	}
+	
+	.black {
+		margin-top: 20px;
+	}
+	
+	.white {
+		margin-top: 40px;
+	}
+	
+	.left::before {
+		border-right-width: 4px;
+	}
+	
+	.right::before {
+		border-left-width: 4px;
+	}
+	
+	.dice {
+		margin-top: 20px;
+	}
+
+	.diceButton, #rulesButton {
+		margin-top: 20px;
+	}
+	
+	.die {
+		width: 80px;
+		height: 80px;
+		font-size: 4rem;
+	}
+}
+
+@media (min-width: 1020px) {
+	.game, .dice {
+		width: 1000px;
+	}
+	
+	.middle {
+		height: 424px;
+		width: 8px;
+		margin-left: -39px;
+	}
+	
+	.middle div {
+		width: 42px;
+		left: -17px;
+		height: 8px;
+	}
+
+	.middle .blk {
+		top: 102px;
+	}
+
+	.middle .wht {
+		top: 342px;
+	}
+	
+	.space {
+		height: 200px;
+	}
+	
+	.space div {
+		height: 11px;
+	}
+	
+	.space::before {
+		margin-left: -25px;
+		border-width: 187px 25px;
+	}
+	.finish {
+		height: 150px;
+	}
+	
+	.finish span {
+		margin-left: 8px;
+		margin-top: 45px;
+		font-size: 3rem;
+	}
+	
+	.finish div {
+		height: 10px;
+	}
+	
+	.black {
+		margin-top: 25px;
+	}
+	
+	.white {
+		margin-top: 50px;
+	}
+}
+
+@media (min-width: 1420px) {
+	.game, .dice {
+		width: 1400px;
+	}
+	
+	.middle {
+		height: 624px;
+		width: 12px;
+		margin-left: -55px;
+	}
+	
+	.middle div {
+		width: 60px;
+		left: -24px;
+		height: 10px;
+	}
+
+	.middle .blk {
+		top: 140px;
+	}
+
+	.middle .wht {
+		top: 485px;
+	}
+	
+	.space {
+		height: 300px;
+	}
+	
+	.space div {
+		height: 15px;
+	}
+	
+	.space::before {
+		margin-left: -35px;
+		border-width: 262px 35px;
+	}
+	
+	.finish {
+		height: 230px;
+	}
+	
+	.finish span {
+		margin-left: 15px;
+		margin-top: 70px;
+		font-size: 4rem;
+	}
+	
+	.finish div {
+		height: 15px;
+	}
+	
+	.black {
+		margin-top: 35px;
+	}
+	
+	.white {
+		margin-top: 70px;
+	}
+	
+	.left::before {
+		border-right-width: 6px;
+	}
+	
+	.right::before {
+		border-left-width: 6px;
+	}
+}
